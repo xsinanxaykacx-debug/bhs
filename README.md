@@ -200,6 +200,94 @@ Economic betting edge
 
 ---
 
+## Related Research & Benchmarking
+
+This project is intentionally positioned against existing football market-efficiency and betting-research work. The purpose is not to claim superiority, but to document where our methodology overlaps with other serious public studies, where it differs, and what each approach does well.
+
+### 1. [vladapl21/odds-calibration](https://github.com/vladapl21/odds-calibration)
+
+**Scope:** 7,600 Premier League matches (2005–2024), bookmaker closing lines, implied-probability calibration, walk-forward Elo/gradient boosting and Kelly staking.
+
+**Common ground:** EPL 1X2, bookmaker odds, walk-forward validation, model-vs-market comparison, and the distinction between predictive signal and profitable betting.
+
+**Strength:** Large EPL historical universe and a clear market-calibration question. It is a particularly useful benchmark for the proposition that genuine predictive information does not necessarily produce a profitable strategy.
+
+**Difference / limitation relative to this project:** Its primary emphasis is calibration and model competition with the market. Our program places greater emphasis on separately frozen economic hypotheses, multiple-testing control, blind OOS decision criteria, and explicit rejection/closure of unsupported mechanisms.
+
+**Relevance:** Very high.
+
+### 2. [panosppkn/football-market-efficiency](https://github.com/panosppkn/football-market-efficiency)
+
+**Scope:** Football market efficiency and price-dispersion opportunities using expanding-window out-of-sample testing.
+
+**Common ground:** walk-forward OOS, implied probabilities, pricing-error analysis, ROI, bootstrap robustness, and price dispersion.
+
+**Strength:** Strong reproducibility orientation and a clear attempt to turn market structure into an economically testable rule. It separates average-market pricing from best-available quoted prices.
+
+**Difference / limitation relative to this project:** Its main economic result focuses on best-price dispersion. Exact timestamped executability, liquidity and stake constraints are acknowledged limitations. Our study is broader in the number of independent mechanisms tested and uses a stricter closed-program / blind-OOS stopping philosophy.
+
+**Relevance:** Very high.
+
+### 3. [Bury20-80/football-betting-market-efficiency](https://github.com/Bury20-80/football-betting-market-efficiency)
+
+**Scope:** 12,459 matches across five major European leagues (2019/20–2025/26), market calibration and favourite-longshot bias.
+
+**Common ground:** calibration vs profitability, favourite-longshot bias, bookmaker odds, bootstrap methods, temporal validation, and testing whether apparent market structure becomes economically useful.
+
+**Strength:** Large multi-league universe and a useful test of whether favourite/longshot effects generalize beyond one competition.
+
+**Difference / limitation relative to this project:** Broader geographic scope but less focused on the EPL-only question. Our program investigates a wider range of EPL-specific mechanisms, including price movement, cross-bookmaker dispersion, sharp-vs-retail lag and context-adjusted ML residuals.
+
+**Relevance:** High for benchmarking H11/H12-style hypotheses.
+
+### 4. [tanamsethi31/footymodel](https://github.com/tanamsethi31/footymodel)
+
+**Scope:** Stats-first football betting research using Dixon-Coles/Poisson, lineup-aware modelling, walk-forward backtests and bookmaker closing odds.
+
+**Common ground:** asks whether positive EV survives against bookmaker prices, walk-forward backtesting, calibration checks, documented negative results, and separation of prediction quality from betting profitability.
+
+**Strength:** An excellent example of a repository that publishes rejected hypotheses and negative results, while also testing genuinely new information such as lineups and player-level data.
+
+**Difference / limitation relative to this project:** Its later stages include live/paper-trading and lineup-aware research. Our completed program is intentionally closed and does not keep adding features after the frozen hypothesis family has been exhausted.
+
+**Relevance:** High.
+
+### Benchmarking principle
+
+These repositories should not be interpreted as proof that the EPL 1X2 market is perfectly efficient, nor should a positive historical result in any one repository be treated as proof of a durable betting edge.
+
+The useful comparison is methodological:
+
+**Predictive relationship**  
+**≠**  
+**Economic betting edge**
+
+A historical ROI result becomes materially more persuasive when it survives temporal separation, genuinely unseen OOS data, pre-declared decision rules, adequate sample size, uncertainty estimation, multiple-testing control where appropriate, drawdown checks, and realistic execution assumptions.
+
+### What this project adds to the benchmark
+
+The distinctive contribution of this repository is not a claim to have discovered a better prediction algorithm. It is the breadth and closure discipline of the research program:
+
+- **20 independently investigated research paths**
+- frozen protocols before formal tests
+- explicit Train / Validation / Blind OOS separation
+- protected 2026/27 blind data
+- statistical significance separated from economic significance
+- BCa bootstrap and sign-permutation testing where specified
+- BH-FDR for related hypothesis families
+- minimum-N and maximum-drawdown criteria
+- negative and inconclusive results retained in the research record
+- no post-hoc threshold/model rescue
+- explicit stopping decision rather than indefinite feature expansion
+
+The resulting conclusion is deliberately narrow:
+
+> **The tested mechanisms did not demonstrate a sustainable, statistically reliable economic edge in blind OOS validation.**
+
+This is a research result for the defined 2015/16–2024/25 EPL 1X2 universe and frozen protocols, not a universal statement that all football betting markets are efficient.
+
+---
+
 ## Final Research Status
 
 ### 🔒 CLOSED
