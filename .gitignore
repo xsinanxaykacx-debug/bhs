@@ -1,0 +1,23 @@
+﻿# YASAKLI — 2026/27 kör veri
+E0 (10).csv
+E0 (10).csv
+*E0?\(10\)*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Sistem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Geçici
+*.tmp
+*.bak
+*~
+~$*
